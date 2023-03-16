@@ -1,0 +1,14 @@
+customer_ids = Channel.from(1, 2, 3, 4)
+process get_data_for_ids {
+    input:
+    val id from customer_ids
+
+    output:
+    file 'data_for_id_*' into data_for_ids
+
+    shell:
+    '''
+    echo !{id} > data_for_id_!{id}.txt
+    '''
+}
+data_for_ids.view()

@@ -1,0 +1,7 @@
+process sayHello {
+  debug true
+
+  script:
+  "echo Hello"
+}
+sayHello()
