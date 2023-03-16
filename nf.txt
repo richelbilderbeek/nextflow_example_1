@@ -1,0 +1,8 @@
+ch = Channel.of(1, 3, 5, 7)
+process basicExample {
+    input:
+    val x from ch
+
+    shell:
+    "echo $x"
+}
